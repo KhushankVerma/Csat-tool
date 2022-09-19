@@ -26,7 +26,7 @@ for dt in daterange(sdate, edate):
     dates.append(dt.strftime("%d%m%Y"))
 
 #print(dates)
-if bool_datereverse == 1: dates.reverse()
+if bool_datereverse == '1': dates.reverse()
 #print(dates)
 url = "https://csat.allen.ac.in/#"
 ser = Service(path)
