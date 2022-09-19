@@ -6,12 +6,13 @@ from datetime import date, timedelta
 
 
 
-formno = input('Form no.')
+formno = input('Form no.: ')
 path = input('path of chromedriver.exe: ')
 sdate = input('Start date (DD MM YYYY)').split(' ')
 edate = input('End date (DD MM YYYY)').split(' ')
 sdate = date(sdate[2],sdate[1],sdate[0])   # start date
 edate = date(edate[2],edate[1],edate[0])   # end date28082004
+bool_datereverse = input('do you want to reverse the order of date (this can sometime save time) 0 of no , 1 for yes: )
 print('\n\n\n csat tool will try all dates(including) from {sdate[2]}/{sdate[1]}/{sdate[0]} to {edate[2]}/{edate[1]}/{edate[0]}')
 
 print('wait for code to get an error and the password will be the last or 2nd last date to get error')
@@ -25,8 +26,8 @@ for dt in daterange(sdate, edate):
     dates.append(dt.strftime("%d%m%Y"))
 
 #print(dates)
-dates.reverse()
-print(dates)
+if bool_datereverse == 1: dates.reverse()
+#print(dates)
 url = "https://csat.allen.ac.in/#"
 ser = Service(path)
 driver = webdriver.Chrome(service=ser)
