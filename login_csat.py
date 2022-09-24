@@ -9,11 +9,11 @@ from datetime import date, timedelta
 formno = input('Form no.: ')
 path = input('path of chromedriver.exe: ')
 sdate = input('Start date (DD MM YYYY)').split(' ')
-edate = input('End date (DD MM YYYY)').split(' '))
+edate = input('End date (DD MM YYYY)').split(' ')
 sdate = date(int(sdate[2]),int(sdate[1]),int(sdate[0]))   # start date
 edate = date(int(edate[2]),int(edate[1]),int(edate[0]))   # end date28082004
-bool_datereverse = input('do you want to reverse the order of date (this can sometime save time) type 0 for no , 1 for yes: )
-print(f'\n\n\n csat tool will try all dates(including) from {sdate[2]}/{sdate[1]}/{sdate[0]} to {edate[2]}/{edate[1]}/{edate[0]}')
+bool_datereverse = input('do you want to reverse the order of date (this can sometime save time) type 0 for no , 1 for yes: ')
+print(f'\n\n\n csat tool will try all dates(including) from {sdate} to {edate}')
 
 print('wait for code to get an error and the password will be the last or 2nd last date to get error')
 def daterange(date1, date2):
